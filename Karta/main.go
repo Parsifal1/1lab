@@ -11,7 +11,7 @@ import (
 
 func main() {
 
-	file, err := os.Open("2_5467644889959236843.json")
+	file, err := os.Open("Regions.geojson")
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
@@ -40,7 +40,7 @@ func main() {
 	dc.SetHexColor("fff")
 
 	dc.InvertY()
-	dc.Scale(4, 4)
+	dc.Scale(5, 5)
 	for i := 0; i < len(fc1.Features); i++ {
 		for r := 0; r < len(fc1.Features[i].Geometry.MultiPolygon); r++ {
 			for k := 0; k < len(fc1.Features[i].Geometry.MultiPolygon[r]); k++ {
@@ -55,5 +55,4 @@ func main() {
 	dc.SetHexColor("f00")
 	dc.Fill()
 	dc.SavePNG("out.png")
-
 }
