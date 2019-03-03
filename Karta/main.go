@@ -44,6 +44,7 @@ func main() {
 	dc.InvertY()
 	dc.MoveTo(fc1.Features[0].Geometry.Polygon[0][0][0], fc1.Features[0].Geometry.Polygon[0][0][1])
 	for j := 1; j < len(fc1.Features[0].Geometry.Polygon[0]); j++ {
+		dc.Scale(1.5, 1.5)
 		dc.LineTo(fc1.Features[0].Geometry.Polygon[0][j][0], fc1.Features[0].Geometry.Polygon[0][j][1])
 	}
 
